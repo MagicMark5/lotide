@@ -7,7 +7,7 @@ const without = function(source, itemsToRemove) {
 
   for (let i = 0; i < source.length; i++) {
 
-    for (item of itemsToRemove) { // compare each element of outer loop with itemsToRemove
+    for (let item of itemsToRemove) { // compare each element of outer loop with itemsToRemove
       if (source[i] === item) {
         indexToRemove = i; // store indices which need to be removed from each iteration of outer loop
       }
@@ -16,7 +16,7 @@ const without = function(source, itemsToRemove) {
     if (source[i] !== source[indexToRemove]) {
       withoutArray.push(source[i]);
     }
-    
+
   }
 
   return withoutArray;

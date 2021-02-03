@@ -6,15 +6,14 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-
-
-// compare array lengths
-const compareArrayLengths = function(arr1, arr2) {
-  return arr1.length === arr2.length ? true : false;
-};
-
 // compare 2 arrays and return a boolean if they are strictly equal, returns false if argument is not an array
 const eqArrays = function(arr1, arr2) {
+
+  // compare array lengths
+  const compareArrayLengths = function(arr1, arr2) {
+    return arr1.length === arr2.length ? true : false;
+  };
+
   let result;
   result = Array.isArray(arr1); // check if inputs are arrays
   result = Array.isArray(arr2);
@@ -33,12 +32,6 @@ const eqArrays = function(arr1, arr2) {
 
 
 // TEST CODE
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
-// assertEqual(11, 1);
-// assertEqual(false, 0);
-// assertEqual("51", "5");
-// assertEqual("WOO", "WOO");
 
 // console.log(eqArrays([1, 2, 3], [1, 2, 3])); // => true
 // console.log(eqArrays([1, 2, 3], [3, 2, 1])); // => false

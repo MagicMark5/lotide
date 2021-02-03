@@ -1,20 +1,19 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected)) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
     console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
 
-
-
-// compare array lengths
-const compareArrayLengths = function(arr1, arr2) {
-  return arr1.length === arr2.length ? true : false;
-};
-
-// compare 2 arrays and return a boolean if they are strictly equal, returns false if argument is not an array
+// compare 2 arrays and return a boolean if they are strictly equal
 const eqArrays = function(arr1, arr2) {
+  
+  // compare array lengths
+  const compareArrayLengths = function(arr1, arr2) {
+    return arr1.length === arr2.length ? true : false;
+  };
+  
   let result;
   result = Array.isArray(arr1); // check if inputs are arrays
   result = Array.isArray(arr2);
@@ -33,20 +32,8 @@ const eqArrays = function(arr1, arr2) {
 
 
 // TEST CODE
-// assertEqual("Lighthouse Labs", "Bootcamp");
-// assertEqual(1, 1);
-// assertEqual(11, 1);
-// assertEqual(false, 0);
-// assertEqual("51", "5");
-// assertEqual("WOO", "WOO");
 
-// console.log(eqArrays([1, 2, 3], [1, 2, 3])); // => true
-// console.log(eqArrays([1, 2, 3], [3, 2, 1])); // => false
-
-// console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"])); // => true
-// console.log(eqArrays(["1", "2", "3"], ["1", "2", 3])); // => false
-
-// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-// assertEqual(eqArrays("[1, 2, 3]", [1, 2, 3]), false); // => should PASS
-// assertEqual(eqArrays([1, 2, 3, 4], [1, 2, 3]), false); // => should PASS
-// assertEqual(eqArrays([1, "2", 3], [1, 2, 3]), false); // => should PASS
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // => should PASS
+assertArraysEqual("[1, 2, 3]", [1, 2, 3]); // => should FAIL
+assertArraysEqual([1, 2, 3, 4], [1, 2, 3]); // => should FAIL
+assertArraysEqual([1, "2", 3], [1, 2, 3]); // => should FAIL

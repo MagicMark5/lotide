@@ -45,7 +45,7 @@ const result4 = findKey({
   a: 1, 
   b: 2, 
   adam: { "quality": "is awesome"} 
-}, x => x.quality === "is awesome";
+}, x => x.quality === "is awesome");
 
 assertEqual(result1, "noma");
 assertEqual(result2, "vegeta");

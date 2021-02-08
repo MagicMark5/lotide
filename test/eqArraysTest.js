@@ -1,15 +1,55 @@
-const eqArrays = require('../eqArrays');
-const assertEqual = require('../assertEqual');
-// TEST CODE
+const _ = require('../index');
+const expect = require('chai').expect;
 
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-assertEqual(eqArrays("[1, 2, 3]", [1, 2, 3]), false); // => should PASS
-assertEqual(eqArrays([1, 2, 3, 4], [1, 2, 3]), false); // => should PASS
-assertEqual(eqArrays([1, "2", 3], [1, 2, 3]), false); // => should PASS
+describe("#eqArrays", () => {
 
-// TEST CODE FOR SUB-ARRAYS (NESTED) WITH RECURSION
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);
-assertEqual(eqArrays([[2, 3, [1, [2], 3], 10], [4]], [[2, 3, [1, [2], 3], 10], [4]]), true);
-assertEqual(eqArrays([[2, 3, [1, [2], 3], 10], [4]], [[2, 3, [1, [20], 3], 10], [4]]), false);
+  it("should return true for two arrays of the same length with identical element values", () => {
+
+    expect(_.eqArrays([1, 2, 3], [1, 2, 3])).to.equal(true);
+
+  });
+
+  it("should return false for comparing an array with an identical string", () => {
+
+    expect(_.eqArrays("[1, 2, 3]", [1, 2, 3])).to.equal(false);
+
+  });
+
+  it("should return false for comparing two arrays with different lengths", () => {
+    
+    
+    expect(_.eqArrays([1, 2, 3], [1, 2, 3, 4])).to.equal(false);
+    
+  });
+
+  it("should return false for comparing two arrays with values of different data types", () => {
+    
+    expect(_.eqArrays([1, "2", 3], [1, 2, 3])).to.equal(false);
+    
+  });
+
+  it("should return true for identical nested arrays", () => {
+    
+    expect(_.eqArrays([[2, 3], [4]], [[2, 3], [4]])).to.equal(true);
+    
+  });
+
+  it("should return false for non-identical nested arrays", () => {
+    
+    expect(_.eqArrays([[2, 3], [4]], [[2, 3], [4, 5]])).to.equal(false);
+    
+  });
+
+  it("should return true for multi-layered identical nested arrays", () => {
+    
+    expect(_.eqArrays([[2, 3, [1, [2], 3], 10], [4]], [[2, 3, [1, [2], 3], 10], [4]])).to.equal(true);
+    
+  });
+
+  it("should return false for multi-layered non-identical nested arrays", () => {
+    
+    expect(_.eqArrays([[2, 3, [1, [2], 3], 10], [4]], [[2, 3, [1, [20], 3], 10], [4]])).to.equal(false);
+    
+  });
+
+});

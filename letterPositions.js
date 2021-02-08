@@ -1,37 +1,3 @@
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays(actual, expected)) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-// compare 2 arrays and return a boolean if they are strictly equal, returns false if argument is not an array
-const eqArrays = function(arr1, arr2) {
-
-  // compare array lengths
-  const compareArrayLengths = function(arr1, arr2) {
-    return arr1.length === arr2.length ? true : false;
-  };
-
-  let result;
-  result = Array.isArray(arr1); // check if inputs are arrays
-  result = Array.isArray(arr2);
-  result = compareArrayLengths(arr1, arr2);
-  
-  if (result) { // if result is still true at this point run the loop...
-    for (let i = 0; i < arr1.length; i++) {
-      if (arr1[i] !== arr2[i]) {
-        result = false;
-        return result; // if a mismatch is found exit the function
-      }
-    }
-  }
-  return result;
-};
-
-
-
 const letterPositions = function(sentence) {
   
   const makeLowerCase = function(string) {
@@ -57,13 +23,3 @@ const letterPositions = function(sentence) {
 
 module.exports = letterPositions;
 
-// Test code
-// const results1 = letterPositions("hello");
-// const results2 = letterPositions("My name is Adam Marsala");
-// const results3 = letterPositions("lighthouse in the house");
-// assertArraysEqual(results1["h"], [0]);
-// assertArraysEqual(results1["l"], [2, 3]);
-// assertArraysEqual(results1["e"], [1]);
-// assertArraysEqual(results1["o"], [4]);
-// assertArraysEqual(results2["a"], [4, 11, 13, 17, 20, 22]);
-// assertArraysEqual(results3["h"], [3, 5, 15, 18]);

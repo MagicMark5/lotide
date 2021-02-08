@@ -18,13 +18,8 @@ const eqObjects = function(object1, object2) {
         result = eqArrays(object1[key], object2[key]); // call eqArrays
       } else if (!Array.isArray(object1[key]) && !Array.isArray(object2[key])) { // only if both are NOT arrays
         if (typeof object1[key] === "object" && typeof object2[key] === "object") { // only if both are objects (but not arrays)
-          // console.log("BOTH OBJECTS!");
-          // console.log("object1 " + key + ": " + object1[key]);
-          // console.log("object2 " + key + ": " + object2[key]);
           result = eqObjects(object1[key], object2[key]); // recursive-case both elements are objects
         } else { // regular values are being compared here OR one is an object and the other is NOT.. so result = false;
-          // console.log("object1 " + key + ": " + object1[key]);
-          // console.log("object2 " + key + ": " + object2[key]);
           result = object1[key] !== object2[key] ? false : true;
         }
       } // if false result if found within looping through the keys
@@ -33,7 +28,6 @@ const eqObjects = function(object1, object2) {
     // console.log("all keys have been compared.....");
     return result;
   }
-  // console.log("the objects have different number of keys!");
   return false; // if they have a different number of keys
 };
 

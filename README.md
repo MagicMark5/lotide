@@ -26,9 +26,6 @@ This project was created and published by me as part of my learnings at Lighthou
 
 The following functions are currently implemented:
 
-* `function1(...)`: description
-* `function2(...)`: description
-* `function3(...)`: description
 * `head(arr)`: returns the head of an array (the first element as an array) 
 * `tail(arr)`: returns the tail of an array (all elements of the array after the head/first element)
 * `middle(arr)`: returns the middle indexed element of an array (two elements if the array has an even length)

@@ -13,6 +13,8 @@ const flatten = function(nestedArr) { // takes a nested array and returns a non-
   return flattened;
 };
 
+module.exports = flatten;
+
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -46,7 +48,7 @@ const eqArrays = function(arr1, arr2) {
 };
 
 
-// // TEST CODE into assertion
-assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
-assertArraysEqual(flatten([1, 2, [3, 4, 5, 6], 5, [6]]), [1, 2, 3, 4, 5, 6, 5, 6]);
-assertArraysEqual(flatten([1, 2, ["three", "four"], 5, [6]]), [1, 2, "three", "four", 5, 6]);
+// // // TEST CODE into assertion
+// assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]), [1, 2, 3, 4, 5, 6]);
+// assertArraysEqual(flatten([1, 2, [3, 4, 5, 6], 5, [6]]), [1, 2, 3, 4, 5, 6, 5, 6]);
+// assertArraysEqual(flatten([1, 2, ["three", "four"], 5, [6]]), [1, 2, "three", "four", 5, 6]);

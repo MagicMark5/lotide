@@ -6,6 +6,8 @@ const map = (array, callback) => {
   return mapped;
 };
 
+module.exports = map;
+
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -38,24 +40,24 @@ const eqArrays = function(arr1, arr2) {
   return result;
 };
 
-// TEST CODE
-const vegeta = {};
-const goku = {};
-const picolo = {};
-const words = ["ground", "control", "to", "major", "tom"];
-const numbers = [10, 20, 30, 40, 50];
-const booleans = [false, false, true];
-const dbz = [vegeta, goku , picolo];
+// // TEST CODE
+// const vegeta = {};
+// const goku = {};
+// const picolo = {};
+// const words = ["ground", "control", "to", "major", "tom"];
+// const numbers = [10, 20, 30, 40, 50];
+// const booleans = [false, false, true];
+// const dbz = [vegeta, goku , picolo];
 
-const results1 = map(words, word => word[0]);
-const results2 = map(numbers, num => num * 10);
-const results3 = map(booleans, word => !word);
-const results4 = map(dbz, (obj) => {
-  obj.power = 9000;
-  return obj;
-});
+// const results1 = map(words, word => word[0]);
+// const results2 = map(numbers, num => num * 10);
+// const results3 = map(booleans, word => !word);
+// const results4 = map(dbz, (obj) => {
+//   obj.power = 9000;
+//   return obj;
+// });
 
-assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]);
-assertArraysEqual(results2, [100, 200, 300, 400, 500]);
-assertArraysEqual(results3, [true, true, false]);
-console.log(results4);
+// assertArraysEqual(results1, [ 'g', 'c', 't', 'm', 't' ]);
+// assertArraysEqual(results2, [100, 200, 300, 400, 500]);
+// assertArraysEqual(results3, [true, true, false]);
+// console.log(results4);

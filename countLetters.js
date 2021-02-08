@@ -1,26 +1,19 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
-const makeLowerCase = function(string) {
-  return string.toLowerCase();
-};
-
-const removeWhiteSpace = function(string) {
-  let noSpaceString = "";
-  for (let i = 0; i < string.length; i++) {
-    if (string[i] !== " ") {
-      noSpaceString += string[i];
-    }
-  }
-  return noSpaceString;
-};
-
 const countLetters = function(string) {
+
+  const makeLowerCase = function(string) {
+    return string.toLowerCase();
+  };
+  
+  const removeWhiteSpace = function(string) {
+    let noSpaceString = "";
+    for (let i = 0; i < string.length; i++) {
+      if (string[i] !== " ") {
+        noSpaceString += string[i];
+      }
+    }
+    return noSpaceString;
+  };
+
   const countOfLetters = {};
   const onlyLowerCaseLetters = makeLowerCase(removeWhiteSpace(string)); // First call helper functions to process string
   // Loop through each character of the string argument
@@ -35,12 +28,6 @@ const countLetters = function(string) {
   return countOfLetters;
 };
 
-// Test Code
-const result1 = countLetters("lighthouse in the house");
-const myName = countLetters("Adam Marsala");
+module.exports = countLetters;
 
-assertEqual(result1["l"], 1);
-assertEqual(result1["h"], 4);
-assertEqual(result1["e"], 3);
-assertEqual(result1["n"], 1);
-assertEqual(myName["a"], 5);
+

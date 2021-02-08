@@ -30,11 +30,14 @@ const eqArrays = function(arr1, arr2) {
   return result;
 };
 
-const makeLowerCase = function(string) {
-  return string.toLowerCase();
-};
+
 
 const letterPositions = function(sentence) {
+  
+  const makeLowerCase = function(string) {
+    return string.toLowerCase();
+  };
+  
   const characterIndices = {};
   const sentenceStr = makeLowerCase(sentence); // First call helper functions to process string
   // Loop through each character of the sentence string argument
@@ -52,13 +55,15 @@ const letterPositions = function(sentence) {
   return characterIndices;
 };
 
+module.exports = letterPositions;
+
 // Test code
-const results1 = letterPositions("hello");
-const results2 = letterPositions("My name is Adam Marsala");
-const results3 = letterPositions("lighthouse in the house");
-assertArraysEqual(results1["h"], [0]);
-assertArraysEqual(results1["l"], [2, 3]);
-assertArraysEqual(results1["e"], [1]);
-assertArraysEqual(results1["o"], [4]);
-assertArraysEqual(results2["a"], [4, 11, 13, 17, 20, 22]);
-assertArraysEqual(results3["h"], [3, 5, 15, 18]);
+// const results1 = letterPositions("hello");
+// const results2 = letterPositions("My name is Adam Marsala");
+// const results3 = letterPositions("lighthouse in the house");
+// assertArraysEqual(results1["h"], [0]);
+// assertArraysEqual(results1["l"], [2, 3]);
+// assertArraysEqual(results1["e"], [1]);
+// assertArraysEqual(results1["o"], [4]);
+// assertArraysEqual(results2["a"], [4, 11, 13, 17, 20, 22]);
+// assertArraysEqual(results3["h"], [3, 5, 15, 18]);

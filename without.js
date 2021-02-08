@@ -22,6 +22,7 @@ const without = function(source, itemsToRemove) {
   return withoutArray;
 };
 
+module.exports = without;
 
 
 // assert Arrays are equal by calling eqArrays
@@ -61,14 +62,14 @@ const eqArrays = function(arr1, arr2) {
 
 
 // TEST CODE
-without([1, 2, 3], [1]); // => [2, 3]
-without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
-// assertArraysEqual test cases
-assertArraysEqual(without([1, 2, 3], [1]), [2, 3]); // => Should PASS
-assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]); // => Should PASS
-assertArraysEqual(without([12, 23, 43, 50, "dog"], ["12", 50, 0, "dog"]), [12, 23, 43]); // should pass
-assertArraysEqual(without([12, 23], []), [12, 23]); // should pass
-// Make sure the original array was not altered by the without function
-const words = ["hello", "world", "lighthouse"];
-without(words, ["lighthouse"]);
-assertArraysEqual(words, ["hello", "world", "lighthouse"]);
+// without([1, 2, 3], [1]); // => [2, 3]
+// without(["1", "2", "3"], [1, 2, "3"]); // => ["1", "2"]
+// // assertArraysEqual test cases
+// assertArraysEqual(without([1, 2, 3], [1]), [2, 3]); // => Should PASS
+// assertArraysEqual(without(["1", "2", "3"], [1, 2, "3"]), ["1", "2"]); // => Should PASS
+// assertArraysEqual(without([12, 23, 43, 50, "dog"], ["12", 50, 0, "dog"]), [12, 23, 43]); // should pass
+// assertArraysEqual(without([12, 23], []), [12, 23]); // should pass
+// // Make sure the original array was not altered by the without function
+// const words = ["hello", "world", "lighthouse"];
+// without(words, ["lighthouse"]);
+// assertArraysEqual(words, ["hello", "world", "lighthouse"]);

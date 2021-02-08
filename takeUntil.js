@@ -10,6 +10,8 @@ const takeUntil = function(array, callback) {
   }
 };
 
+module.exports = takeUntil;
+
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays(actual, expected)) {
     console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
@@ -44,17 +46,17 @@ const eqArrays = function(arr1, arr2) {
 
 // TEST CODE
 
-const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
-const results1 = takeUntil(data1, x => x < 0);
+// const data1 = [1, 2, 5, 7, 2, -1, 2, 4, 5];
+// const results1 = takeUntil(data1, x => x < 0);
 
-const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
-const results2 = takeUntil(data2, x => x === ',');
+// const data2 = ["I've", "been", "to", "Hollywood", ",", "I've", "been", "to", "Redwood"];
+// const results2 = takeUntil(data2, x => x === ',');
 
-const data3 = [42, "cat", true, [1, 2, 3], {a: 1}];
-const results3 = takeUntil(data3, x => typeof x === 'object');
+// const data3 = [42, "cat", true, [1, 2, 3], {a: 1}];
+// const results3 = takeUntil(data3, x => typeof x === 'object');
 
-assertArraysEqual(results1, [ 1, 2, 5, 7, 2 ]);
-console.log('---');
-assertArraysEqual(results2, [ "I've", 'been', 'to', 'Hollywood' ]);
-console.log('---');
-assertArraysEqual(results3, [42, "cat", true]);
+// assertArraysEqual(results1, [ 1, 2, 5, 7, 2 ]);
+// console.log('---');
+// assertArraysEqual(results2, [ "I've", 'been', 'to', 'Hollywood' ]);
+// console.log('---');
+// assertArraysEqual(results3, [42, "cat", true]);

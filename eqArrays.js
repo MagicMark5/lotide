@@ -1,11 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
-
 // compare 2 arrays and return a boolean if they are strictly equal, returns false if argument is not an array
 const eqArrays = function(arr1, arr2) {
 
@@ -30,24 +22,5 @@ const eqArrays = function(arr1, arr2) {
   return result; 
 };
 
+module.exports = eqArrays;
 
-// TEST CODE
-
-// console.log(eqArrays([1, 2, 3], [1, 2, 3])); // => true
-// console.log(eqArrays([1, 2, 3], [3, 2, 1])); // => false
-
-// console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"])); // => true
-// console.log(eqArrays(["1", "2", "3"], ["1", "2", 3])); // => false
-
-// assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true); // => should PASS
-// assertEqual(eqArrays("[1, 2, 3]", [1, 2, 3]), false); // => should PASS
-// assertEqual(eqArrays([1, 2, 3, 4], [1, 2, 3]), false); // => should PASS
-// assertEqual(eqArrays([1, "2", 3], [1, 2, 3]), false); // => should PASS
-
-
-// TEST CODE FOR SUB-ARRAYS (NESTED) WITH RECURSION
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4]]), true);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], [4, 5]]), false);
-assertEqual(eqArrays([[2, 3], [4]], [[2, 3], 4]), false);
-assertEqual(eqArrays([[2, 3, [1, [2], 3], 10], [4]], [[2, 3, [1, [2], 3], 10], [4]]), true);
-assertEqual(eqArrays([[2, 3, [1, [2], 3], 10], [4]], [[2, 3, [1, [20], 3], 10], [4]]), false);
